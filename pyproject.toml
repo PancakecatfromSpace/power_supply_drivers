@@ -1,0 +1,15 @@
+[project]
+name = "power_supply_drivers"
+version = "1.0"
+dependencies = []
+
+requires-python = ">=3.8"
+authors = [
+  {name = "Samuel Hasenfratz", email = "s230067@th-ab.de"},
+]
+
+description = "Drivers build to run Lab Power Supplies over TCP/IP and VISA."
+readme = "README.md"
+license = "MIT"
+#license-files = ["LICEN[CS]E.*"]
+keywords = ["driver", "lab suppy", "power supply", "supply", "deltaelektronika", "delta elektronika", "tti", "SM210-CP-150", "QPX1200SP", "Thurlby Thandar"]
