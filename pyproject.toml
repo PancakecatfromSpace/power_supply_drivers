@@ -14,5 +14,5 @@ license = "MIT"
 #license-files = ["LICEN[CS]E.*"]
 keywords = ["driver", "lab suppy", "power supply", "supply", "deltaelektronika", "delta elektronika", "tti", "SM210-CP-150", "QPX1200SP", "Thurlby Thandar"]
 
-[tool.setuptools]
-py-modules = ["wrapper", "shared", "driver_visa", "driver_scpi_tcp"]
+#[tool.setuptools]
+#py-modules = ["wrapper", "shared", "driver_visa", "driver_scpi_tcp"]
