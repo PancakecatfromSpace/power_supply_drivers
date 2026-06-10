@@ -6,14 +6,14 @@ class SupplyCommunication:
     Handles communication with power supply.
     
     Args:
-        IP (str): IP Address as String, in the Format: 192.168.178.1, expects no subnet mask!
-        type (str): Type of communication, determines the driver to be used. Supports Auto, EA, VISA_TTI (Default: Auto, automatically check and choose the appropiate driver
-        SUPPLY_PORT (int): Port of the power supply (Default: 8462)
-        TIMOUT_SECONDS (int): Timeout after which the socket is closed (Default: 10 Seconds)
-        BUFFER_SIZE (int): Maximum number of bytes to read from the socket for the response. Unused by VISA. (Default: 128)
-        TERMINATION_STRING (str): String that terminates the response of a VISA query. Unused by TCP/IP. (Default: "\r\n")
-        VISA_BACKEND (str): Path to the VISA driver to be used. For example the NI VISA driver is located at /Windows/System32/visa64.dll under Windows. Defaults to "@py" which resolves automatically to the pyvisa-py backend.
-        CMD_LOOKUP (str): Defines if a Supply specific lookup table should be used. (Default: tti)
+    IP (str): IP Address as String, in the Format: 192.168.178.1, expects no subnet mask!
+    type (str): Type of communication, determines the driver to be used. Supports Auto, EA, VISA_TTI (Default: Auto, automatically check and choose the appropiate driver)
+    SUPPLY_PORT (int): Port of the power supply (Default: 8462)
+    TIMOUT_SECONDS (int): Timeout after which the socket is closed (Default: 10 Seconds)
+    BUFFER_SIZE (int): Maximum number of bytes to read from the socket for the response. Unused by VISA. (Default: 128)
+    TERMINATION_STRING (str): String that terminates the response of a VISA query. Unused by TCP/IP. (Default: \r\n)
+    VISA_BACKEND (str): Path to the VISA driver to be used. For example the NI VISA driver is located at /Windows/System32/visa64.dll under Windows. Defaults to "@py" which resolves automatically to the pyvisa-py backend.
+    CMD_LOOKUP (str): Defines if a Supply specific lookup table should be used. (Default: tti)
     """
     def __init__(self, IP:str, type = shared.SocketVals.TYPE, port = shared.SocketVals.SUPPLY_PORT, timeout = shared.SocketVals.TIMEOUT_SECONDS, termination = shared.SocketVals.TERMINATION_STRING, backend = shared.SocketVals.VISA_BACKEND, lookup = shared.SocketVals.CMD_LOOKUP):
         """
