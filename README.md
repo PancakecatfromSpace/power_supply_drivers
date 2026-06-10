@@ -1,5 +1,11 @@
 # The simple way to work with Supplies over a network.
 
+## Installation:
+
+```
+pip install git+https://github.com/PancakecatfromSpace/power_supply_drivers
+```
+
 ## Motivation and scope
 
 This driver was written for my bachelor thesis during which I was confronted with the issue of changing power supplies within my Project. I originally developed a driver for the [DE SM210-CP-150](https://www.deltaelektronika.com/en/products/sm15k-series) within my [SunCell](https://github.com/PancakecatfromSpace/SunCell) project, but was forced to switch to a [TTI QPX1200SP](https://www.aimtti.com/product-category/dc-power-supplies/aim-qpxseries) since the original supply was not in the required power range. Adapting my programm turned out to be difficult and I wanted my driver to still be compatible with both supplies. Therefore I developed a wrapper that automatically detects different TCP/IP and VISA VXI-11 power supplies within the network, establish the communication, measure and set voltage, current, power and send user specified commands to the supply.
@@ -30,6 +36,7 @@ Sets the output values of the power supply to the specified value. Expects:
 - P (float): Power to set the output to
 You may edit all or none of the values. Any unedited value will default to the previous value stored within the setpoints dataclass stored within the object.
 When setting the setpoint Voltage Current and Power are checked against the values stored within the limits dataclass. Attempting to set a setpoint outside of the given limits will raise an exception.
+
 **WARNING: CHECK IF THE STANDARD VALUES WITHIN power_supply_drivers.shared.limits are set to a sensible set of values for your circuit! If you don't do this only gods mercy can save your circuit and or power supply!**
 
 ### setLimits
