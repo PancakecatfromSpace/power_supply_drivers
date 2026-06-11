@@ -104,4 +104,5 @@ class SupplyCommunication:
         return self.driver.sendAndReceiveCommand(command, self.socket)
 
     def __del__(self):
-        self.driver.closeSocket(self.socket)
+        if not self.socket == None:
+            self.driver.closeSocket(self.socket)
