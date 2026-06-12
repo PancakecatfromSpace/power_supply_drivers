@@ -1,7 +1,7 @@
 [project]
 name = "power_supply_drivers"
 version = "1.0"
-dependencies = ["dataclasses", "pyvisa", "pyvisa-py"]
+dependencies = ["dataclasses", "pyvisa", "pyvisa-py", "psutil", "zeroconf"]
 
 requires-python = ">=3.8"
 authors = [
