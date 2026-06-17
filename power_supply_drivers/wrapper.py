@@ -23,6 +23,7 @@ class SupplyCommunication:
         self.valuelimits = shared.Limits()
         self.setpoints = shared.VCP()
         self.measuredpoints = shared.VCP()
+        self.driver = None
         # check if the TYPE variable is set and act accordingly
         match self.socketvalues.TYPE:
             case "Auto":
