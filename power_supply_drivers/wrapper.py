@@ -27,16 +27,12 @@ class SupplyCommunication:
         self.driver = None
         # check if the TYPE variable is set and act accordingly
 
-    def connect(self, IP:str = None, port = None):
+    def connect(self):
         """
-        Initialzie the communication. All attributes but IP are optional. Not specified attributes will be read from dataclass SocketVals.
-        If both IP Adress and port are not given the values that got set during initialization will be used.
+        Initialzie the communication.
         """
         # check if there are new values for IP adress or port, if not connect with previously set values to supply
-        if IP is not None:
-            self.socketvalues.SUPPLY_IP = IP
-        if port is None:
-            self.socketvalues.SUPPLY_PORT = port
+        
 
         match self.socketvalues.TYPE:
             case "Auto":
