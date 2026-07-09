@@ -17,7 +17,8 @@ class SupplyCommunication:
     """
     def __init__(self, IP:str, type = shared.SocketVals.TYPE, port = shared.SocketVals.SUPPLY_PORT, timeout = shared.SocketVals.TIMEOUT_SECONDS, termination = shared.SocketVals.TERMINATION_STRING, backend = shared.SocketVals.VISA_BACKEND, lookup = shared.SocketVals.CMD_LOOKUP):
         """
-        Initialzie the communication. All attributes but IP are optional. Not specified attributes will be read from dataclass SocketVals.
+        Initialzie the Object, stores all options but does not connect to the supply. This allows the supply object to be created and the IP and port variables 
+        to be edited after initializing.
         """
         self.socketvalues = shared.SocketVals(IP, type, port, timeout)
         self.valuelimits = shared.Limits()
@@ -25,6 +26,18 @@ class SupplyCommunication:
         self.measuredpoints = shared.VCP()
         self.driver = None
         # check if the TYPE variable is set and act accordingly
+
+    def connect(self, IP:str = None, port = None):
+        """
+        Initialzie the communication. All attributes but IP are optional. Not specified attributes will be read from dataclass SocketVals.
+        If both IP Adress and port are not given the values that got set during initialization will be used.
+        """
+        # check if there are new values for IP adress or port, if not connect with previously set values to supply
+        if IP is not None:
+            self.socketvalues.SUPPLY_IP = IP
+        if port is not None:
+            self.socketvalues.SUPPLY_PORT = port
+
         match self.socketvalues.TYPE:
             case "Auto":
                 # if the Auto option is choosen, check if a VISA or TCP/IP Device can be found matching the IP Adress or the IP Adress and port
