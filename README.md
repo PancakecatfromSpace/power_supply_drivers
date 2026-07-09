@@ -25,8 +25,8 @@ The wrapper file contains the logic to determine which driver to load and method
 - VISA_BACKEND (str): Path to the VISA driver to be used. For example the NI VISA driver is located at /Windows/System32/visa64.dll under Windows. Defaults to "@py" which resolves automatically to the pyvisa-py backend.
 - CMD_LOOKUP (str): Defines if a Supply specific lookup table should be used. (Default: tti)
 
-During initialzation the class first checks the value of **type**, if none is given it defaults to Auto and probes if a VISA VXI-11 or a TCP/IP device with the specified **IP** Adress is available. If resources are scarse this probing step can be skipped by specifying through **type** which specific driver should be used. Currently available options are: *VISA* and *DE*.
-If initialization was successfull you can start communicating with the power supply through the following methods:
+After initialzation the objects connect method must be run. It first checks the value of **type**, if none is given it defaults to Auto and probes if a VISA VXI-11 or a TCP/IP device with the specified **IP** Adress is available. If resources are scarse this probing step can be skipped by specifying through **type** which specific driver should be used. Currently available options are: *VISA* and *DE*. The connect method accepts a string value for the IP address and a int value for the port. If none are given the values given during initialization are used.
+After connect was successfull you can start communicating with the power supply through the following methods:
 
 ### setValues
 
