@@ -33,7 +33,7 @@ class SupplyCommunication:
         If both IP Adress and port are not given the values that got set during initialization will be used.
         """
         # check if there are new values for IP adress or port, if not connect with previously set values to supply
-        if IP is None:
+        if IP is not None:
             self.socketvalues.SUPPLY_IP = IP
         if port is None:
             self.socketvalues.SUPPLY_PORT = port
